@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 PROJECT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), ".."),
 )
@@ -79,16 +80,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = ''
+
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder'
+    'djangobower.finders.BowerFinder',
 )
 
-BOWER_COMPONENTS_ROOT = BASE_DIR
+STATICFILES_DIRS = ( os.path.join(PROJECT_ROOT, 'static'), )
+
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 BOWER_INSTALLED_APPS = (
     'jquery',

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='openracer'>
 <head>
-    {% load static %}
-    <script type="text/javascript" src='{% static 'jquery/jquery.js' %}'></script>
+    {% include 'events/staticfiles.html' %}
+    <script type="text/javascript" src='/static/js/app.js'></script>
 </head>
-<body>
-    Hello, World!
+{% verbatim %}
+<body ng-controller='main'>
+    Hello, {{world}}!
 </body>
+{% endverbatim %}
 </html>
