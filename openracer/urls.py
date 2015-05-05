@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'openracer.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^rest/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^events/', include('events.urls')),
 )
