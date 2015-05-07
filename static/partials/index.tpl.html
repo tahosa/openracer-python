@@ -1,0 +1,21 @@
+<div ng-controller="indexCtrl">
+    <div class="jumbotron">
+        <h1>
+            OpenRacer
+        </h1>
+    </div>
+    <div class="event-select-wrapper center-block row col-xs-6 no-float clearfix space-top">
+        <div class="btn-group col-xs-12">
+            <select class="event-select btn btn-default input-lg col-xs-11" ng-options="event.id as event.name for event in events" ng-model="selected"></select>
+            <button class="btn btn-default input-lg col-xs-1"><i class="glyphicon glyphicon-plus"></i></button>
+        </div>
+    </div>
+    <div class="event-actions-wrapper center-block col-xs-6 no-float clearfix space-top">
+        <div class="col-xs-12">
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('runs')"><h1><i class="glyphicon glyphicon-road"></i></h1>Runs</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('standings')"><h1><i class="glyphicon glyphicon-stats"></i></h1>Standings</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('drivers')"><h1><i class="glyphicon glyphicon-user"></i></h1>Drivers</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('manage')"><h1><i class="glyphicon glyphicon-wrench"></i></h1>Manage</button>
+        </div>
+    </div>
+</div>

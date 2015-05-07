@@ -1,0 +1,29 @@
+.no-float {
+    float: none;
+}
+
+.settings {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.space-top {
+    margin-top: 0.5em;
+}
+
+.space-left {
+    margin-left: 0.5em;
+}
+
+.space-right {
+    margin-right: 0.5em;
+}
+
+.space-bottom {
+    margin-bottom: 0.5em;
+}
+
+.space-sides {
+    margin: 0 0.5em;
+}
