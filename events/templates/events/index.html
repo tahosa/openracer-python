@@ -2,15 +2,18 @@
 <html ng-app='openracer'>
 <head>
     {% include 'events/staticfiles.html' %}
+    <base href="/" />
     <script type="text/javascript" src="/static/js/app.js"></script>
     <script type="text/javascript" src="/static/js/controllers.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/events.css" />
 </head>
 {% verbatim %}
 <body class="container" ng-controller='mainCtrl'>
+    <!--
     <div class="settings clearfix">
         <button class="btn btn-default"><i class="glyphicon glyphicon-cog"></i></button>
     </div>
+    -->
     <div ng-view>
 
     </div>
