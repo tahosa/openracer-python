@@ -11,7 +11,7 @@
             <button class="btn btn-default input-lg col-xs-1" ng-click="newEvent()"><i class="glyphicon glyphicon-plus"></i></button>
         </div>
     </div>
-    <div class="event-actions-wrapper center-block col-xs-6 no-float clearfix space-top">
+    <div class="event-actions-wrapper center-block col-xs-6 no-float clearfix space-top" ng-show="selected">
         <div class="col-xs-12">
             <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('runs')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-road"></i></h1>Runs</button>
             <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('standings')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-stats"></i></h1>Standings</button>

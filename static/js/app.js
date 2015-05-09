@@ -13,19 +13,19 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$resourcePr
             templateUrl: '/static/partials/index.tpl.html',
             controller: 'indexCtrl'
         }).
-        when('/events/:id?', {
+        when('/events/:eventId?', {
             templateUrl: '/static/partials/events.tpl.html',
             controller: 'eventsCtrl'
         }).
-        when('/events/:id/runs', {
+        when('/events/:eventId/runs', {
             templateUrl: '/static/partials/runs.tpl.html',
             controller: 'runsCtrl'
         }).
-        when('/events/:id/standings', {
+        when('/events/:eventId/standings', {
             templateUrl: '/static/partials/standings.tpl.html',
             controller: 'standingsCtrl'
         }).
-        when('/events/:id/drivers', {
+        when('/events/:eventId/drivers', {
             templateUrl: '/static/partials/drivers.tpl.html',
             controller: 'driversCtrl'
         }).

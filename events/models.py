@@ -4,11 +4,12 @@ from django.db import models
 class Drivers(models.Model):
     name = models.CharField(max_length=100, blank=False)
     address = models.CharField(max_length=200, blank=False)
+    scca_number = models.IntegerField(null=True)
     emergency_name = models.CharField(max_length=100, blank=False)
     emergency_phone = models.CharField(max_length=10, blank=False)
     novice = models.BooleanField(default=True)
-    default_car = models.ForeignKey('Cars')
-    default_number = models.ForeignKey('Numbers')
+    default_car = models.ForeignKey('Cars', null=True)
+    default_number = models.ForeignKey('Numbers', null=True)
 
     def __str__(self):
         return self.name
@@ -46,6 +47,7 @@ class Runs(models.Model):
 
 class Classes(models.Model):
     name = models.CharField(max_length=20, blank=False)
+    abbr = models.CharField(max_length=4, null=True)
     parent = models.ForeignKey('self', blank=True, null=True)
 
     def __str_(self):
@@ -56,6 +58,9 @@ class EventDrivers(models.Model):
     driver = models.ForeignKey('Drivers')
     car = models.ForeignKey('Cars')
     number = models.ForeignKey('Numbers')
+
+    class Meta:
+        unique_together = ('event', 'driver')
 
     def __str_(self):
         return "{0} - {1}".format(self.number.number, self.driver.name)

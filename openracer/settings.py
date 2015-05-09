@@ -108,3 +108,7 @@ BOWER_INSTALLED_APPS = (
 )
 
 APPEND_SLASH = True
+
+FIXTURE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'fixtures'),
+)
