@@ -5,6 +5,12 @@ from events.rest import *
 
 router = routers.SimpleRouter()
 router.register(r'events', EventsViewSet)
+router.register(r'drivers', DriversViewSet)
+router.register(r'cars', CarsViewSet)
+router.register(r'numbers', NumbersViewSet)
+router.register(r'classes', ClassesViewSet)
+router.register(r'runs', RunsViewSet)
+router.register(r'event-drivers', EventDriversViewSet)
 
 urlpatterns = patterns('',
     # Examples:

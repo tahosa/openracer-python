@@ -18,12 +18,14 @@ class Cars(models.Model):
     model = models.CharField(max_length=200, blank=False)
     year = models.CharField(max_length=4)
     car_class = models.ForeignKey('Classes')
+    driver_list = models.ManyToManyField('Drivers')
 
     def __str_(self):
         return "{0} {1} {2} ({3})".format(self.year, self.make, self.model, self.car_class.name)
 
 class Numbers(models.Model):
     number = models.IntegerField(blank=False)
+    driver = models.ForeignKey('Drivers')
 
     def __str__self():
         return str(self.number);

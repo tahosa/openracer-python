@@ -13,10 +13,10 @@
     </div>
     <div class="event-actions-wrapper center-block col-xs-6 no-float clearfix space-top">
         <div class="col-xs-12">
-            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('runs')"><h1><i class="glyphicon glyphicon-road"></i></h1>Runs</button>
-            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('standings')"><h1><i class="glyphicon glyphicon-stats"></i></h1>Standings</button>
-            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('drivers')"><h1><i class="glyphicon glyphicon-user"></i></h1>Drivers</button>
-            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('')"><h1><i class="glyphicon glyphicon-wrench"></i></h1>Manage</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('runs')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-road"></i></h1>Runs</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('standings')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-stats"></i></h1>Standings</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('drivers')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-user"></i></h1>Drivers</button>
+            <button class="btn btn-default btn-lg col-xs-3" ng-click="setView('')" ng-enabled="selected"><h1><i class="glyphicon glyphicon-wrench"></i></h1>Manage</button>
         </div>
     </div>
 </div>

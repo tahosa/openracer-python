@@ -4,7 +4,8 @@ angular.module('openracer.controllers', ['openracer.data']).
     }).
     controller('indexCtrl', function($scope, $location, $modal, events) {
         $scope.setView = function(view) {
-            $location.path("/events/" + $scope.selected + "/" + view);
+            if($scope.selected)
+                $location.path("/events/" + $scope.selected + "/" + view);
         };
 
         $scope.newEvent = function() {

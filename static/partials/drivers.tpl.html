@@ -10,6 +10,9 @@
                 <i class="glyphicon glyphicon-pencil pull-right hover hover-right" ng-click="edit(driver)"></i>
             </div>
         </div>
+        <div class="pull-right">
+            <button class="btn btn-default" ng-click="newDriver"><i class="glyphicon glyphicon-plus"></i></button>
+        </div>
     </div>
     <div class="col-lg-9 col-md-9 col-xs-12" ng-show="active">
         <h2>{{active.name}} <button class="btn btn-default btn-lg" ng-click="edit(active)" ng-hide="editing"><i class="glyphicon glyphicon-pencil"></i></button></h2>
