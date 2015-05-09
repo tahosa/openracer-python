@@ -1,8 +1,13 @@
-var app = angular.module('openracer', ['ngRoute', 'ngResource', 'ngSanitize', 'mgcrea.ngStrap', 'openracer.controllers']);
+var app = angular.module('openracer', ['ngRoute', 'ngSanitize', 'mgcrea.ngStrap', 'openracer.controllers', 'openracer.data']);
 
-app.config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$resourceProvider',
+    function($routeProvider, $locationProvider, $httpProvider, $resourceProvider) {
         $locationProvider.html5Mode(true).hashPrefix('!');
+
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+        $resourceProvider.defaults.stripTrailingSlashes = false;
 
         $routeProvider.when('/', {
             templateUrl: '/static/partials/index.tpl.html',

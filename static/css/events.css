@@ -35,7 +35,12 @@
     display: none;
 }
 
-div:hover > .hover-right {
+.hover-inline {
+    display:none;
+}
+
+.hover:hover > .hover-right,
+.hover:hover > .hover-inline {
     display: block;
 }
 
@@ -45,4 +50,8 @@ div.hover:hover {
 
 .hover.link {
     cursor: pointer;
+}
+
+i.hover:hover {
+    color: #337ab7;
 }

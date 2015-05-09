@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'events',
     'rest_framework',
     'django.contrib.staticfiles',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
     'djangobower',
 )
 
@@ -104,3 +106,5 @@ BOWER_INSTALLED_APPS = (
     'angular-strap',
     'bootstrap'
 )
+
+APPEND_SLASH = True

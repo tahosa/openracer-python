@@ -1,8 +1,8 @@
-angular.module('openracer.controllers', []).
+angular.module('openracer.controllers', ['openracer.data']).
     controller('mainCtrl', function($scope) {
 
     }).
-    controller('indexCtrl', function($scope, $location, $modal) {
+    controller('indexCtrl', function($scope, $location, $modal, events) {
         $scope.setView = function(view) {
             $location.path("/events/" + $scope.selected + "/" + view);
         };
@@ -11,28 +11,16 @@ angular.module('openracer.controllers', []).
             $modal({
                 title: "New Event",
                 contentTemplate: "/static/partials/event-new.tpl.html",
-                show: true
+                show: true,
+                scope: $scope.$new()
             });
         };
 
-        $scope.events = [
-            {
-                id: 1,
-                name: "Event 1",
-            },
-            {
-                id: 2,
-                name: "Event 2"
-            },
-            {
-                id: 3,
-                name: "Event 3"
-            },
-            {
-                id: 4,
-                name: "Event 4"
-            }
-        ];
+        $scope.$on('openracer.event.created', function(event, data) {
+            $scope.events.push(data);
+        })
+
+        $scope.events = events.query();
     }).
     controller('eventsCtrl', function($scope) {
 
@@ -44,7 +32,6 @@ angular.module('openracer.controllers', []).
 
     }).
     controller('driversCtrl', function($scope) {
-        $scope.edit = null;
         $scope.drivers = [
             {
                 id: 1,
@@ -98,29 +85,37 @@ angular.module('openracer.controllers', []).
             },
         ];
 
+        $scope.setActive = function(driver) {
+            $scope.active = driver;
+        }
+
         $scope.edit = function(driver) {
-            $scope.edit = driver;
+            $scope.editing = driver;
             $scope.active = driver;
         };
 
         $scope.save = function() {
-            console.log($scope.edit);
+            console.log($scope.editing);
         };
 
         $scope.cancel = function() {
-            delete($scope.edit);
+            delete($scope.editing);
         };
     }).
-    controller('newEventCtrl', function($scope) {
+    controller('newEventCtrl', function($scope, events) {
+        $scope.event = {};
+
         $scope.save = function() {
             console.log($scope.event);
+            events.save($scope.event).$promise.then(function(data) {
+                $scope.$emit('openracer.event.created', data);
+            });
             $scope.$hide();
         };
 
         $scope.cancel = function() {
             if ($scope.event) {
-                $scope.event.$setPristine();
-                $scope.event.$setUntouched();
+                $scope.event = {};
             }
             $scope.$hide();
         };
