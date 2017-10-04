@@ -3,13 +3,10 @@
 <head>
     {% include 'events/staticfiles.html' %}
     <base href="/" />
-    <script type="text/javascript" src="/static/js/app.js"></script>
-    <script type="text/javascript" src="/static/js/controllers.js"></script>
-    <script type="text/javascript" src="/static/js/data.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/events.css" />
 </head>
 {% verbatim %}
-<body class="container full-height" ng-controller='mainCtrl'>
+<body class="container full-height">
     <!--
     <div class="settings clearfix">
         <button class="btn btn-default"><i class="glyphicon glyphicon-cog"></i></button>
@@ -18,6 +15,24 @@
     <div ng-view>
 
     </div>
+
+    <script type="text/javascript" src="/static/app/openracer.module.js"></script>
+    <script type="text/javascript" src="/static/app/openracer.services.js"></script>
+    <script type="text/javascript" src="/static/app/openracer.js"></script>
+    <script type="text/javascript" src="/static/app/settings/settings.module.js"></script>
+    <script type="text/javascript" src="/static/app/settings/settings.services.js"></script>
+    <script type="text/javascript" src="/static/app/events/events.module.js"></script>
+    <script type="text/javascript" src="/static/app/events/events.services.js"></script>
+    <script type="text/javascript" src="/static/app/events/events.js"></script>
+    <script type="text/javascript" src="/static/app/events/drivers/drivers.module.js"></script>
+    <script type="text/javascript" src="/static/app/events/manager/manager.module.js"></script>
+    <script type="text/javascript" src="/static/app/events/manager/manager.services.js"></script>
+    <script type="text/javascript" src="/static/app/events/manager/new.js"></script>
+    <script type="text/javascript" src="/static/app/events/runs/runs.module.js"></script>
+    <script type="text/javascript" src="/static/app/events/standings/standings.module.js"></script>
+    <script type="text/javascript" src="/static/app/drivers/drivers.module.js"></script>
+    <script type="text/javascript" src="/static/app/drivers/drivers.services.js"></script>
+    <script type="text/javascript" src="/static/app/controllers.js"></script>
 </body>
 {% endverbatim %}
 </html>
